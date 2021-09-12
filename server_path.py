@@ -40,7 +40,7 @@ class jessica_api(Resource):
 		start = time.time()
 		try:			
 			args = parser.parse_args()
-			output = yan_organization_kg_search.search_people_by_name(
+			output = yan_organization_kg_search.search_organization_by_name(
 				organization_name = args["organization_name"],
 				)
 			output['status'] = 'success'

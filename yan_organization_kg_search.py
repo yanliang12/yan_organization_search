@@ -42,7 +42,7 @@ def search_by_page_url_hash_and_ingest_to_neo4j(
 	return page_url
 
 '''
-search_organization_by_name(
+yan_organization_kg_search.search_organization_by_name(
 	organization_name = "Department of Community Development",
 	)
 '''
@@ -64,7 +64,7 @@ def search_organization_by_logo(
 	return page_url
 
 '''
-search_organization_by_logo(
+yan_organization_kg_search.search_organization_by_logo(
 	'/dcd_data/linkedin/group 42 logo-og-image.jpg'
 	)
 '''

@@ -14,6 +14,7 @@ args = argsparser.prepare_args()
 
 parser = ns.parser()
 parser.add_argument('organization_name', type=str, location='json')
+parser.add_argument('organization_logo_path', type=str, location='json')
 
 ###
 

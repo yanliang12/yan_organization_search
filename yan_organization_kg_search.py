@@ -14,7 +14,7 @@ es_session = jessica_es.start_es(
 	es_port_number = "9344")
 
 jessica_es.start_kibana(
-	kibana_path = '/jessica/kibana-6.7.1-linux-x86_64',
+	kibana_path = 'kibana-6.7.1-linux-x86_64',
 	kibana_port_number = "3641",
 	es_port_number = "9344",
 	)

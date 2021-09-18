@@ -49,10 +49,7 @@ yan_organization_kg_search.search_organization_by_name(
 def search_organization_by_logo(
 	organization_logo_path,
 	):
-	print('loading image and extracting features from {}'.format(organization_logo_path))
 	query_vector = yan_image_embedding.image_to_vector(organization_logo_path)
-	print('extraced features of {}'.format(query_vector))
-	print('searching in es')
 	output = jim_es_vector_search.search_by_vector(
 		index_name = 'organization_logo_embedding',
 		vector_field_name = 'logo_embedding',
@@ -60,7 +57,6 @@ def search_organization_by_logo(
 		es_session = es_session,
 		similarity_measure = 'euclidean',
 		)
-	print('get the parsed data and ingest to neo4j')
 	page_url = search_by_page_url_hash_and_ingest_to_neo4j(
 		output[0]['page_url_hash'],
 		)

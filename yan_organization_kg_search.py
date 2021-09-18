@@ -2,7 +2,6 @@
 import jessica_es
 import jessica_neo4j 
 import yan_page_parsed_to_triplet
-
 import yan_image_embedding
 import jim_es_vector_search
 
@@ -68,8 +67,6 @@ yan_organization_kg_search.search_organization_by_logo(
 	'/dcd_data/linkedin/group 42 logo-og-image.jpg'
 	)
 '''
-
-
 
 def search_organization_by_name(
 	organization_name,

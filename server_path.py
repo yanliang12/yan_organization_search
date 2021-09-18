@@ -40,9 +40,15 @@ class jessica_api(Resource):
 		start = time.time()
 		try:			
 			args = parser.parse_args()
-			output = yan_organization_kg_search.search_organization_by_name(
-				organization_name = args["organization_name"],
-				)
+			output = {}
+			if args["organization_name"] is not None:
+				output['source_url'] = yan_organization_kg_search.search_organization_by_name(
+					organization_name = args["organization_name"],
+					)
+			if args["organization_logo_path"] is not None:
+				output['source_url'] = yan_organization_kg_search.search_organization_by_logo(
+					organization_name = args["organization_logo_path"],
+					)
 			output['status'] = 'success'
 			output['running_time'] = float(time.time()- start)
 			return output, 200

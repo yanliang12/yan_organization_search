@@ -78,9 +78,15 @@ class jessica_api1(Resource):
 		try:			
 			args = parser.parse_args()
 			output = {}
+			print(args["organization_logo_path"])
 			output['source_url'] = yan_organization_kg_search.search_organization_by_logo(
-					organization_logo_path = args["organization_logo_path"],
-					)
+				organization_logo_path = "/dcd_data/linkedin/g42logo.jpg"
+				)
+			'''
+			output['source_url'] = yan_organization_kg_search.search_organization_by_logo(
+				organization_logo_path = args["organization_logo_path"]
+				)
+			'''
 			output['status'] = 'success'
 			output['running_time'] = float(time.time()- start)
 			return output, 200

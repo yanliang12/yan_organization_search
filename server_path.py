@@ -54,6 +54,7 @@ class jessica_api(Resource):
 
 
 ###############
+
 req_fields1 = {
 	'organization_logo_path': fields.String(),
 	}

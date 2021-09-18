@@ -19,6 +19,7 @@ parser.add_argument('organization_name', type=str, location='json')
 
 req_fields = {
 	'organization_name': fields.String(),
+	'organization_logo_path': fields.String(),
 	}
 jessica_api_req = ns.model('knowledge_graph', req_fields)
 
@@ -47,7 +48,7 @@ class jessica_api(Resource):
 					)
 			if args["organization_logo_path"] is not None:
 				output['source_url'] = yan_organization_kg_search.search_organization_by_logo(
-					organization_name = args["organization_logo_path"],
+					organization_logo_path = args["organization_logo_path"],
 					)
 			output['status'] = 'success'
 			output['running_time'] = float(time.time()- start)

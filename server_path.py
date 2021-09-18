@@ -29,7 +29,6 @@ rsp_fields = {\
 	'source_url':fields.String,\
 	'running_time':fields.Float\
 	}
-
 jessica_api_rsp = ns.model('knowledge_graph', rsp_fields)
 
 @ns.route('/organization_search')
@@ -43,11 +42,11 @@ class jessica_api(Resource):
 		try:			
 			args = parser.parse_args()
 			output = {}
-			if args["organization_name"] is not None:
+			if "organization_name" in args:
 				output['source_url'] = yan_organization_kg_search.search_organization_by_name(
 					organization_name = args["organization_name"],
 					)
-			if args["organization_logo_path"] is not None:
+			if "organization_logo_path" in args:
 				output['source_url'] = yan_organization_kg_search.search_organization_by_logo(
 					organization_logo_path = args["organization_logo_path"],
 					)

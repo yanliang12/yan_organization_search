@@ -21,10 +21,10 @@ req_fields = {
 	}
 jessica_api_req = ns.model('input', req_fields)
 
-rsp_fields = {\
-	'status':fields.String,\
-	'source_url':fields.String,\
-	'running_time':fields.Float\
+rsp_fields = {
+	'status':fields.String,
+	'source_url':fields.String,
+	'running_time':fields.Float
 	}
 jessica_api_rsp = ns.model('output', rsp_fields)
 

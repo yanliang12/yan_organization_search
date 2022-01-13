@@ -17,16 +17,16 @@ parser.add_argument('organization_name', type=str, location='json')
 
 ###############
 req_fields = {
-	'organization_name': fields.String(),
+	'organization_name': fields.String(example = "Inception Institute of Artificial Intelligence"),
 	}
-jessica_api_req = ns.model('knowledge_graph', req_fields)
+jessica_api_req = ns.model('input', req_fields)
 
 rsp_fields = {\
 	'status':fields.String,\
 	'source_url':fields.String,\
 	'running_time':fields.Float\
 	}
-jessica_api_rsp = ns.model('knowledge_graph', rsp_fields)
+jessica_api_rsp = ns.model('output', rsp_fields)
 
 @ns.route('/organization_search')
 class jessica_api(Resource):
